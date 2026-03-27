@@ -1,6 +1,6 @@
-# Code Graph Builder
+# Code Graph Builder for Python/PHP codebase
 
-Created and maintained by Jagan Jijo.
+Created and maintained by Jagan Jijo
 
 Portfolio: https://jagan-jijo.github.io/portfolio/
 
