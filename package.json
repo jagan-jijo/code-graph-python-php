@@ -1,0 +1,20 @@
+{
+  "name": "code-graph-builder",
+  "version": "1.0.0",
+  "description": "Local-first interactive codebase analysis and graph visualization tool",
+  "author": "Jagan Jijo <https://jagan-jijo.github.io/portfolio/>",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://jagan-jijo.github.io/portfolio/",
+  "scripts": {
+    "start": "concurrently -n backend,frontend -c cyan,magenta \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && ..\\.venv\\Scripts\\python.exe -m uvicorn main:app --reload --port 8000 --host 127.0.0.1",
+    "start:backend:unix": "cd backend && ../.venv/bin/python -m uvicorn main:app --reload --port 8000 --host 127.0.0.1",
+    "start:frontend": "cd frontend && npm run dev",
+    "setup": "python -m venv .venv && .venv\\Scripts\\python.exe -m pip install -r requirements.txt && cd frontend && npm install",
+    "setup:unix": "python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt && cd frontend && npm install",
+    "install:frontend": "cd frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

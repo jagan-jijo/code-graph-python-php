@@ -1,0 +1,411 @@
+/* ================================================================
+   SetupForm � Using design tokens from index.css
+   ================================================================ */
+
+/* Setup card wrapper */
+.setup-card {
+  background: linear-gradient(
+    160deg,
+    rgba(242, 230, 210, 0.96),
+    rgba(252, 246, 237, 0.92)
+  );
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-xl);
+  padding: var(--s-6);
+  box-shadow: var(--shadow-panel);
+}
+
+/* Header */
+.setup-header {
+  margin-bottom: var(--s-5);
+}
+
+.setup-header h1 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin: 0 0 var(--s-1);
+}
+
+.setup-header p {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: var(--lh-body);
+}
+
+/* Section heading */
+.model-section h2 {
+  margin: 0;
+  font-size: var(--text-xl);
+}
+
+/* Shared helper text */
+.setup-header p,
+.field-help,
+.inline-status {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--lh-snug);
+}
+
+.model-help {
+  margin: var(--s-1) 0 0;
+  max-width: 34ch;
+}
+
+.github-help {
+  margin: calc(-1 * var(--s-2)) 0 0;
+}
+
+/* Form & section grids */
+.setup-form,
+.model-section {
+  display: grid;
+  gap: var(--s-4);
+}
+
+/* Label + field pairs */
+.setup-form label,
+.model-section label {
+  display: grid;
+  gap: var(--s-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* Input controls in the form */
+.setup-form input,
+.setup-form select,
+.model-section input,
+.model-section select {
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  min-height: 44px;
+  background: var(--surface-input);
+  color: var(--text-primary);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+  touch-action: manipulation;
+}
+
+.setup-form input:hover,
+.setup-form select:hover,
+.model-section input:hover,
+.model-section select:hover {
+  border-color: var(--border-strong);
+}
+
+.setup-form input:focus-visible,
+.setup-form select:focus-visible,
+.model-section input:focus-visible,
+.model-section select:focus-visible {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px var(--brand-primary-10);
+}
+
+.setup-form input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Column grids */
+.setup-grid.two-col {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.setup-grid.three-col {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Row utilities */
+.focus-section,
+.section-title-row,
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.section-title-row {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.field-title {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Tag cloud */
+.selected-tags,
+.available-models {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+/* ================================================================
+   Model Picker Cards
+   ================================================================ */
+
+.model-picker-grid {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+}
+
+.model-picker-field {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--s-2);
+  padding: var(--s-4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-lg);
+  background: rgba(255, 252, 248, 0.82);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.model-picker-field:hover {
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-card);
+}
+
+.model-picker-field span {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.model-picker-field select {
+  width: 100%;
+  min-width: 0;
+  align-self: end;
+}
+
+/* ================================================================
+   Model Action Row
+   ================================================================ */
+
+.model-action-row {
+  display: flex;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.model-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-self: stretch;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.model-buttons .secondary-button {
+  min-width: 140px;
+  white-space: nowrap;
+}
+
+/* ================================================================
+   Model Status Panel
+   ================================================================ */
+
+.model-status {
+  display: grid;
+  align-content: center;
+  gap: var(--s-1);
+  min-height: 52px;
+  border-radius: var(--r-md);
+  padding: var(--s-3) var(--s-4);
+  background: rgba(92, 68, 42, 0.06);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--lh-snug);
+  overflow-wrap: anywhere;
+  transition: background-color var(--t-fast), color var(--t-fast);
+}
+
+.model-status-title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.model-status-visible {
+  background: var(--info-surface);
+  color: var(--info-text);
+}
+
+/* ================================================================
+   Badges
+   ================================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--r-full);
+  padding: 4px 10px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.badge.local {
+  background: var(--success-surface);
+  color: var(--success-text);
+}
+
+.badge.remote {
+  background: var(--brand-accent-10);
+  color: var(--brand-accent);
+}
+
+/* ================================================================
+   Privacy Banner
+   ================================================================ */
+
+.privacy-banner {
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  background: rgba(178, 100, 38, 0.09);
+  color: #6e3515;
+  font-size: var(--text-sm);
+  line-height: var(--lh-snug);
+  border: 1px solid rgba(178, 100, 38, 0.16);
+}
+
+/* ================================================================
+   Browse File Modal
+   ================================================================ */
+
+.browse-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(24, 16, 6, 0.46);
+  display: grid;
+  place-items: center;
+  padding: var(--s-5);
+  overflow: auto;
+}
+
+.browse-panel {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: 80vh;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  background: #fffaf2;
+  padding: var(--s-5);
+  display: grid;
+  gap: var(--s-4);
+  box-shadow: var(--shadow-modal);
+}
+
+.browse-list {
+  overflow: auto;
+  display: grid;
+  gap: var(--s-2);
+  min-height: 180px;
+  max-height: 50vh;
+}
+
+.browse-item {
+  display: flex;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-md);
+  background: rgba(92, 68, 42, 0.05);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: background-color var(--t-fast);
+}
+
+.browse-item:hover {
+  background: rgba(92, 68, 42, 0.10);
+}
+
+.browse-search {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  min-height: 44px;
+  background: var(--surface-input);
+  color: var(--text-primary);
+  font: inherit;
+  touch-action: manipulation;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.browse-search:focus-visible {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px var(--brand-primary-10);
+}
+
+.browse-search::placeholder {
+  color: var(--text-muted);
+}
+
+.browse-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.browse-error {
+  border-radius: var(--r-md);
+  padding: var(--s-3) var(--s-4);
+  background: var(--error-surface);
+  color: var(--error-text);
+  font-size: var(--text-sm);
+  border: 1px solid var(--error-border);
+}
+
+/* ================================================================
+   Responsive � SetupForm
+   ================================================================ */
+
+@media (max-width: 900px) {
+  .setup-grid.two-col,
+  .setup-grid.three-col {
+    grid-template-columns: 1fr;
+  }
+
+  .model-action-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .setup-card {
+    padding: var(--s-4);
+  }
+
+  .model-buttons {
+    flex-direction: column;
+  }
+
+  .model-buttons .secondary-button {
+    min-width: unset;
+    width: 100%;
+  }
+}
