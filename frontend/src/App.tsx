@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { GraphView } from './components/GraphView.tsx';
+import { GraphCanvas } from './components/GraphCanvas';
 import { NodeDetail } from './components/NodeDetail';
 import { ProgressView } from './components/ProgressView';
 import { SearchPanel } from './components/SearchPanel';
@@ -87,7 +87,7 @@ export default function App() {
             projectStatus={currentProject?.status ?? null}
             onStop={stopIndexing}
           />
-          <GraphView
+          <GraphCanvas
             graph={graph}
             isGraphLoading={isGraphLoading}
             projectStatus={currentProject?.status ?? null}
